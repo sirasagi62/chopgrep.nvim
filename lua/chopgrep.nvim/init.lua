@@ -42,7 +42,7 @@ end
 local function get_json_output(query, on_success)
   local output_data = {}
 
-  vim.fn.jobstart({ "chopgrep", "query", query, "-j" }, {
+  vim.fn.jobstart({ "chopgrep", "query", query, "10", "-j" }, {
     on_stdout = function(job_id, data, event)
       -- 受信したデータを行ごとに保存
       for _, line in ipairs(data) do
